@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mean Pressure Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="cloud-container">
+        <img src="{{ url_for('static', filename='cloud.jpeg') }}" class="cloud-left">
+        <img src="{{ url_for('static', filename='cloud.jpeg') }}" class="cloud-right">
+    </div>
+    <div class="container">
+        <h1>Mean Pressure Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="meantemp">Mean Temperature (°C):</label>
+            <input type="text" id="meantemp" name="meantemp" required><br><br>
+            
+            <label for="humidity">Humidity (%):</label>
+            <input type="text" id="humidity" name="humidity" required><br><br>
+            
+            <label for="wind_speed">Wind Speed (km/h):</label>
+            <input type="text" id="wind_speed" name="wind_speed" required><br><br>
+            
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
